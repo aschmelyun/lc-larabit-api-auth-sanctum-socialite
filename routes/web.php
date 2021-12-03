@@ -27,7 +27,6 @@ Route::get('/auth/callback', function () {
         ]);
     }
 
-    // $token = explode('|', $user->createToken('twitter')->plainTextToken)[1];
     $token = $user->createToken('twitter')->plainTextToken;
     return redirect()->route('home', ['token' => $token]);
 });
